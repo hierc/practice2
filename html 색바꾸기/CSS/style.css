@@ -1,0 +1,54 @@
+body{
+    position: relative;
+    display: flex;
+    align-items: center;
+    background-color: #fdfdfd;
+    height: 100vh;
+}
+.content{
+    position: relative;
+    display: grid;
+    justify-content: center;
+    width: 100%;
+    gap: 40px;
+}
+.btn{
+    padding: 1.1em 2em;
+    background: none;
+    border: 2px solid #fff;
+    font-size: 15px;
+    color: #131313;
+    cursor: pointer;
+    position: relative;
+    overflow: hidden;     /*튀어나온거는 안 보이게 */
+    transition: all 0.3s;
+    border-radius: 12px;
+    background-color: #ecd448;
+    font-weight: bolder;
+    box-shadow: 0 2px 0 2px #000;
+}
+.btn::before{
+    content: "";
+    position: absolute;
+    width: 100px;
+    height: 120%;
+    background-color: #ff6700;
+    top: 50%;
+    transform: skewX(30deg) translate(-150%, -50%);
+    transition: all 0.3s;
+}
+/* 마우스를 올렸을 때 배경, 글자, 그림자를 바꿔라 */
+.btn:hover{
+    background-color: #4cc9f0;
+    color: #fff;
+    box-shadow: 0 2px 0 2px #0d3b66;
+}
+/* 마우스를 올렸을 때 요소 앞쪽에 새 컨텐츠를 추가*/
+.btn:hover::before{
+    transform: skewX(30deg) translate(150%, -50%);
+    transition-delay: 0.1s;
+}
+/* 버튼을 눌렀을 때 스케일을 0.9로 바꾸어라 */
+.btn:active{
+    transform: scale(0.9);
+}
